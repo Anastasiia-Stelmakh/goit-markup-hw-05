@@ -148,6 +148,7 @@ ul {
 
 /* Navigation style */
 .nav {
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--dark-grey-txt-cl);
@@ -155,6 +156,11 @@ ul {
   line-height: 1.17;
   letter-spacing: 0.02em;
   display: block;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 
 .header-nav {
@@ -165,8 +171,22 @@ ul {
 .nav:focus {
   color: var(--accent-cl);
 }
+
 .current {
   color: var(--accent-cl);
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-cl);
+  border-radius: 2px;
 }
 
 .header-list {
@@ -199,6 +219,11 @@ ul {
   padding-bottom: 32px;
   display: flex;
   align-items: center;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 .contact-item:hover,
 .contact-item:focus {
@@ -390,11 +415,23 @@ ul {
   background-color: var(--main-bg-cl);
   border-radius: 50%;
   fill: #afb1b8;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 
 .team-contacts-link:hover,
 .team-contacts-link:focus {
   background-color: var(--accent-cl);
+}
+
+.team-icons-img {
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 
 .team-contacts-link:hover .team-icons-img,
@@ -434,10 +471,19 @@ ul {
   border-radius: 4%;
   cursor: pointer;
   color: #afb1b8;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 
 .clients-icon {
   fill: currentColor;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
 }
 
 .client-link:hover,
@@ -467,6 +513,11 @@ ul {
   font-style: normal;
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 .footer-link:hover,
 .footer-link:focus {
@@ -509,6 +560,11 @@ ul {
   border-radius: 50%;
   box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
   fill: var(--white-txt-cl);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 
 .footer-icons:not(:last-child) {
@@ -541,6 +597,11 @@ ul {
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 
 .button-item:not(:last-child) {
@@ -568,21 +629,59 @@ ul {
 }
 
 .pic-list {
+  position: relative;
   margin-right: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .pic-list:nth-child(3n + 3) {
   margin-right: 0;
 }
 
-.portfolio-link:hover {
+.pic-list:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+
+  transition: transfotm 250ms cubic-bezier 150ms;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(33, 150, 243, 0.9);
+
+  padding-top: -1px;
+}
+
+.portfolio-desc {
+  color: var(--white-txt-cl);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.pic-list .portfolio-link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-link {
   display: block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
 }
 .portfolio-text {
   border-top: none;
