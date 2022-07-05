@@ -35,6 +35,10 @@ html {
   box-sizing: inherit;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* Стили для обнуления верхних отступов у элементов */
 h1,
 h2,
@@ -353,6 +357,50 @@ ul {
   margin-right: 30px;
 }
 
+/* ====================== */
+/* ====================== */
+.img-list {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-list:hover .doing-overlay {
+  transform: translateY(0);
+}
+
+.doing-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  height: 70px;
+
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
+
+  transition: transfotm cubic-bezier;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doing-desc {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-txt-cl);
+  padding: 27px 82px;
+}
+
+/* ====================== */
+/* ====================== */
+
 /* Team styles */
 
 .team-section {
@@ -628,6 +676,8 @@ ul {
   padding-left: 0;
 }
 
+/* ====================== */
+/* ====================== */
 .pic-list {
   position: relative;
   margin-right: 30px;
@@ -648,27 +698,29 @@ ul {
   top: 0;
   left: 0;
 
-  transform: translateY(100%);
+  transform: translateY(139%);
 
-  transition: transfotm 250ms cubic-bezier 150ms;
-
+  transition-duration: 250ms;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier;
+  transition-delay: 150ms;
+  backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  padding: 63px 24px;
-  backdrop-filter: blur(3px);
+  height: 294px;
   background-color: rgba(33, 150, 243, 0.9);
-
-  padding-top: -1px;
 }
 
 .portfolio-desc {
   color: var(--white-txt-cl);
   font-size: 18px;
   line-height: 1.6;
+  padding: 63px 24px;
 }
+/* ====================== */
+/* ====================== */
 
 .pic-list .portfolio-link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -702,4 +754,59 @@ ul {
 .pic-text {
   font-size: 16px;
   line-height: 1.88;
+}
+
+/* modal window */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+
+  transition: opacity 250ms scale, visibility 250ms scale;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -90px;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--main-bg-cl);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-bg-cl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  margin-right: 8px;
+  padding: 0;
+  cursor: pointer;
 }
