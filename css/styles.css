@@ -522,10 +522,6 @@ ul {
 
 .clients-icon {
   fill: currentColor;
-
-  /* transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .client-link:hover,
@@ -670,17 +666,20 @@ ul {
 /* ====================== */
 /* ====================== */
 .pic-list {
-  position: relative;
   margin-right: 30px;
   margin-bottom: 30px;
-  overflow: hidden;
 }
 
 .pic-list:nth-child(3n + 3) {
   margin-right: 0;
 }
 
-.pic-list:hover .portfolio-overlay {
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay:hover .portfolio-overlay {
   transform: translateY(0);
 }
 
@@ -692,13 +691,12 @@ ul {
   transform: translateY(139%);
 
   transition-duration: 250ms;
-  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 370px;
   height: 294px;
   background-color: rgba(33, 150, 243, 0.9);
 }
@@ -712,7 +710,7 @@ ul {
 /* ====================== */
 /* ====================== */
 
-.pic-list .portfolio-link:hover {
+.portfolio-link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -722,7 +720,7 @@ ul {
 
   transition-property: box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: cubic-cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-text {
