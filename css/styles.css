@@ -359,11 +359,6 @@ ul {
 /* ====================== */
 .img-list {
   position: relative;
-  overflow: hidden;
-}
-
-.img-list:hover .doing-overlay {
-  transform: translateY(0);
 }
 
 .doing-overlay {
@@ -373,12 +368,6 @@ ul {
   background-color: rgba(47, 48, 58, 0.8);
   width: 100%;
   height: 70px;
-
-  transform: translateY(100%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  transition: transfotm cubic-bezier;
   backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
@@ -461,7 +450,7 @@ ul {
   border-radius: 50%;
   fill: #afb1b8;
 
-  transition-property: fill, background-color;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
